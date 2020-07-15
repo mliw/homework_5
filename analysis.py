@@ -65,7 +65,7 @@ class assemble:
     
     def __init__(self,num=2019):
         self.data_cache = parser_data(num)
-        home_data,mean_home,mean_away = data_cache
+        home_data,mean_home,mean_away = self.data_cache
         self.team_list = home_data.index
         
     def produce_result(self,home,away):
@@ -78,7 +78,7 @@ class assemble:
         for i in range(len(self.team_list)):
             for j in range(len(self.team_list)):        
                 if i!=j:
-                    self.produce_result(team_list[i],team_list[j])
+                    self.produce_result(self.team_list[i],self.team_list[j])
         print("="*70)
         
 
